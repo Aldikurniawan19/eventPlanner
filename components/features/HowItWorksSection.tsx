@@ -138,8 +138,8 @@ export const HowItWorksSection: React.FC = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 relative"
+          viewport={{ once: true, amount: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 relative will-change-transform transform-gpu"
         >
           {steps.map((step, idx) => (
             <motion.div

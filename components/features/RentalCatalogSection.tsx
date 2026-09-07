@@ -179,21 +179,21 @@ export const RentalCatalogSection: React.FC = () => {
             // Desktop (>= 1024px): 2 card kiri (0, 1) dari kiri (-90px), 2 card kanan (2, 3) dari kanan (90px)
             // Mobile (< 1024px): zigzag selang-seling (0 dari kiri, 1 dari kanan, dst)
             const isFromLeft = isDesktop ? index % 4 < 2 : index % 2 === 0;
-            const distance = isDesktop ? 90 : 75;
+            const distance = isDesktop ? 30 : 20;
             const initialX = isFromLeft ? -distance : distance;
 
             return (
               <motion.div
                 key={`${item.id}-${isDesktop ? 'desktop' : 'mobile'}`}
-                initial={{ opacity: 0, x: initialX, y: 20 }}
+                initial={{ opacity: 0, x: initialX, y: 12 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: false, amount: 0.15 }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{
-                  duration: 0.65,
-                  delay: (index % 4) * 0.1,
+                  duration: 0.5,
+                  delay: (index % 4) * 0.08,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="h-[430px] w-full"
+                className="h-[430px] w-full will-change-transform transform-gpu"
               >
                 <DestinationCard
                   imageUrl={item.image}

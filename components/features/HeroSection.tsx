@@ -15,19 +15,16 @@ interface AnimatedCounterProps {
 
 const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
   value,
-  duration = 1.6,
+  duration = 1.4,
   suffix = '',
   isDecimal = false,
 }) => {
   const [displayValue, setDisplayValue] = useState<number | string>(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   useEffect(() => {
-    if (!isInView) {
-      setDisplayValue(0);
-      return;
-    }
+    if (!isInView) return;
 
     const start = 0;
     const end = value;
@@ -75,42 +72,42 @@ export const HeroSection: React.FC = () => {
         {/* Konten Utama Hero dengan Animasi Masuk Framer Motion */}
         <div className="max-w-2xl space-y-6">
           <motion.span
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="inline-block text-xs font-bold tracking-wider text-[#195e49] uppercase"
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            className="inline-block text-xs font-bold tracking-wider text-[#195e49] uppercase will-change-transform transform-gpu"
           >
             PARTNER PRODUKSI RESMI EVENT PLANNER
           </motion.span>
 
           <motion.h1
-            initial={{ opacity: 0, y: 22 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.08, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight text-[#111827] leading-[1.12]"
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+            className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight text-[#111827] leading-[1.12] will-change-transform transform-gpu"
           >
             Solusi Tata Suara & Perlengkapan Panggung untuk Kesuksesan Event Anda.
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.16, ease: 'easeOut' }}
-            className="text-base sm:text-lg text-foreground sm:text-foreground-muted leading-relaxed max-w-xl font-medium sm:font-normal"
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-base sm:text-lg text-foreground sm:text-foreground-muted leading-relaxed max-w-xl font-medium sm:font-normal will-change-transform transform-gpu"
           >
             Dari wedding ballroom megah, konser festival, hingga konferensi korporat. Kami sediakan sound system rider-ready, sound engineer berpengalaman, dan loading tepat waktu untuk menjamin kesempurnaan rundown event Anda.
           </motion.p>
 
           {/* Dual CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.24, ease: 'easeOut' }}
-            className="flex flex-wrap items-center gap-3 pt-2"
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-wrap items-center gap-3 pt-2 will-change-transform transform-gpu"
           >
             <a href="#katalog">
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
@@ -137,16 +134,16 @@ export const HeroSection: React.FC = () => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
             className="flex flex-wrap items-center gap-6 pt-4 text-xs sm:text-sm text-foreground sm:text-foreground-muted font-medium sm:font-normal"
           >
             <motion.div
-              initial={{ opacity: 0, x: -10 }}
+              initial={{ opacity: 0, x: -8 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ delay: 0.35, duration: 0.4 }}
-              className="flex items-center gap-2"
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ delay: 0.22, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="flex items-center gap-2 will-change-transform transform-gpu"
             >
               <div className="w-4 h-4 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
                 <Check className="w-3 h-3 stroke-[3]" />
@@ -155,11 +152,11 @@ export const HeroSection: React.FC = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: -10 }}
+              initial={{ opacity: 0, x: -8 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ delay: 0.42, duration: 0.4 }}
-              className="flex items-center gap-2"
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ delay: 0.27, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="flex items-center gap-2 will-change-transform transform-gpu"
             >
               <div className="w-4 h-4 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
                 <Check className="w-3 h-3 stroke-[3]" />
@@ -168,11 +165,11 @@ export const HeroSection: React.FC = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: -10 }}
+              initial={{ opacity: 0, x: -8 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ delay: 0.5, duration: 0.4 }}
-              className="flex items-center gap-2"
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ delay: 0.32, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="flex items-center gap-2 will-change-transform transform-gpu"
             >
               <div className="w-4 h-4 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
                 <Check className="w-3 h-3 stroke-[3]" />
@@ -183,11 +180,11 @@ export const HeroSection: React.FC = () => {
 
           {/* Ringkasan Simpel: Jumlah Event yang Telah Ditangani dengan Animasi Count */}
           <motion.div
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ delay: 0.55, duration: 0.5, ease: 'easeOut' }}
-            className="pt-6 border-t border-[#e5e7eb]/80 flex flex-wrap items-center gap-6 sm:gap-10"
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ delay: 0.35, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            className="pt-6 border-t border-[#e5e7eb]/80 flex flex-wrap items-center gap-6 sm:gap-10 will-change-transform transform-gpu"
           >
             <div className="space-y-0.5">
               <div className="text-2xl sm:text-3xl font-black text-[#111827] font-mono tracking-tight">

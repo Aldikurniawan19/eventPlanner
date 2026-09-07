@@ -55,8 +55,8 @@ const DestinationCard = React.forwardRef<HTMLDivElement, DestinationCardProps>(
       >
         <div
           className="relative block w-full h-full rounded-2xl overflow-hidden shadow-lg 
-                     transition-all duration-500 ease-in-out 
-                     group-hover:scale-[1.02] group-hover:shadow-[0_0_50px_-12px_hsl(var(--theme-color)/0.6)]"
+                     transition-transform duration-300 ease-out 
+                     group-hover:scale-[1.02] group-hover:shadow-xl will-change-transform transform-gpu"
           style={{
             boxShadow: `0 0 35px -15px hsl(var(--theme-color) / 0.45)`,
           }}

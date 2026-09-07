@@ -29,11 +29,11 @@ export const WhyRentSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Kolom Kiri: Pertanyaan Retoris & Deskripsi */}
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="lg:col-span-5 space-y-4"
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 space-y-4 will-change-transform transform-gpu"
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#111827] leading-snug">
               Kenapa puluhan Event Planner mempercayakan produksinya pada kami?
@@ -48,16 +48,16 @@ export const WhyRentSection: React.FC = () => {
             {pillars.map((pillar, idx) => (
               <motion.div
                 key={pillar.num}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{
-                  duration: 0.5,
-                  delay: 0.12 * idx,
-                  ease: [0.21, 0.47, 0.32, 0.98],
+                  duration: 0.45,
+                  delay: 0.08 * idx,
+                  ease: [0.16, 1, 0.3, 1],
                 }}
                 whileHover={{ y: -4 }}
-                className="space-y-2 p-3.5 -m-3.5 rounded-xl transition-colors hover:bg-surface/70"
+                className="space-y-2 p-3.5 -m-3.5 rounded-xl transition-colors hover:bg-surface/70 will-change-transform transform-gpu"
               >
                 <span className="block text-4xl sm:text-5xl font-light text-[#9ca3af] font-mono select-none transition-colors group-hover:text-primary">
                   {pillar.num}

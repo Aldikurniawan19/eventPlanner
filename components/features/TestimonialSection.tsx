@@ -71,8 +71,8 @@ export const TestimonialSection: React.FC = () => {
                       initial={{ opacity: 0, scale: 0.96 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 1.04 }}
-                      transition={{ duration: 0.35, ease: 'easeOut' }}
-                      className="w-full h-full object-cover"
+                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                      className="w-full h-full object-cover will-change-transform transform-gpu"
                       loading="lazy"
                     />
                   </AnimatePresence>
@@ -87,8 +87,8 @@ export const TestimonialSection: React.FC = () => {
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -12 }}
-                    transition={{ duration: 0.3, ease: 'easeOut' }}
-                    className="space-y-4"
+                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    className="space-y-4 will-change-transform transform-gpu"
                   >
                     <Quote className="w-8 h-8 text-primary/40 rotate-180" />
 

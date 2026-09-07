@@ -115,9 +115,9 @@ const cardTextContainerVariants: Variants = {
 const cardTextItemVariants: Variants = {
   rest: {
     opacity: 0,
-    y: 20,
+    y: 12,
     transition: {
-      duration: 0.22,
+      duration: 0.18,
       ease: 'easeInOut',
     },
   },
@@ -125,8 +125,8 @@ const cardTextItemVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.36,
-      ease: 'easeOut',
+      duration: 0.28,
+      ease: [0.16, 1, 0.3, 1],
     },
   },
 }
@@ -135,15 +135,15 @@ const imageZoomVariants: Variants = {
   rest: {
     scale: 1,
     transition: {
-      duration: 0.45,
+      duration: 0.4,
       ease: 'easeOut',
     },
   },
   hover: {
-    scale: 1.06,
+    scale: 1.05,
     transition: {
-      duration: 0.55,
-      ease: 'easeOut',
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1],
     },
   },
 }
@@ -174,7 +174,7 @@ const BentoGalleryCard: React.FC<BentoGalleryCardProps> = ({
       tabIndex={0}
       aria-label={`Lihat ${item.title}`}
       className={cn(
-        "group relative flex cursor-pointer items-end overflow-hidden rounded-2xl border border-[#e5e7eb] bg-[#111827] p-5 shadow-xs transition-all duration-300 hover:shadow-xl hover:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+        "group relative flex cursor-pointer items-end overflow-hidden rounded-2xl border border-[#e5e7eb] bg-[#111827] p-5 shadow-xs transition-all duration-300 hover:shadow-xl hover:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary will-change-transform transform-gpu",
         isTall
           ? "row-span-2 h-full w-[20rem] sm:w-[25rem]"
           : "row-span-1 h-full w-[17rem] sm:w-[21rem]"
@@ -185,7 +185,7 @@ const BentoGalleryCard: React.FC<BentoGalleryCardProps> = ({
         src={item.url}
         alt={item.title}
         variants={imageZoomVariants}
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover will-change-transform transform-gpu"
         loading="lazy"
         draggable={false}
       />
