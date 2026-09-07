@@ -2,7 +2,7 @@
 import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'outline' | 'secondary' | 'mint' | 'dark';
+  variant?: 'primary' | 'outline' | 'secondary' | 'mint' | 'dark' | 'white-pill';
   size?: 'sm' | 'md' | 'lg';
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
@@ -40,6 +40,8 @@ export const Button: React.FC<ButtonProps> = ({
       'bg-surface-mint hover:bg-[#dcece3] text-primary border border-transparent font-semibold active:scale-[0.99]',
     dark:
       'bg-surface-dark hover:bg-black text-white active:scale-[0.99]',
+    'white-pill':
+      'bg-white hover:bg-surface text-foreground border border-border active:bg-surface-hover shadow-xs',
   };
 
   return (

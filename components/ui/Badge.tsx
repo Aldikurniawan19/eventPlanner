@@ -3,7 +3,7 @@ import React from 'react';
 
 interface BadgeProps {
   children: React.ReactNode;
-  variant?: 'primary' | 'available' | 'neutral' | 'mint';
+  variant?: 'primary' | 'available' | 'neutral' | 'mint' | 'dark';
   className?: string;
 }
 
@@ -25,6 +25,7 @@ export const Badge: React.FC<BadgeProps> = ({
     primary: 'bg-primary-subtle text-primary border-transparent font-semibold',
     neutral: 'text-foreground-subtle uppercase text-[11px] font-semibold tracking-wider',
     mint: 'bg-surface-mint text-primary font-semibold',
+    dark: 'bg-white/10 text-white border border-white/20 uppercase text-[11px] font-semibold tracking-wider',
   };
 
   return (
