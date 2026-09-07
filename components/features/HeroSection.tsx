@@ -68,8 +68,8 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
 export const HeroSection: React.FC = () => {
   return (
     <section className="relative bg-white bg-[url('/img/bgHero.png')] bg-cover bg-right lg:bg-center bg-no-repeat pt-14 sm:pt-20 pb-20 sm:pb-28 lg:pb-36 overflow-hidden border-b border-[#e5e7eb]">
-      {/* Overlay gradien halus untuk memastikan keterbacaan teks di berbagai ukuran layar */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent lg:via-white/40 pointer-events-none" />
+      {/* Overlay gradien untuk memastikan keterbacaan teks di mobile dan desktop */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/85 sm:via-white/85 sm:to-transparent lg:via-white/40 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Konten Utama Hero dengan Animasi Masuk Framer Motion */}
@@ -99,7 +99,7 @@ export const HeroSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.16, ease: 'easeOut' }}
-            className="text-base sm:text-lg text-[#4b5563] leading-relaxed max-w-xl font-normal"
+            className="text-base sm:text-lg text-foreground sm:text-foreground-muted leading-relaxed max-w-xl font-medium sm:font-normal"
           >
             Dari wedding ballroom megah, konser festival, hingga konferensi korporat. Kami sediakan sound system rider-ready, sound engineer berpengalaman, dan loading tepat waktu untuk menjamin kesempurnaan rundown event Anda.
           </motion.p>
@@ -139,7 +139,7 @@ export const HeroSection: React.FC = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="flex flex-wrap items-center gap-6 pt-4 text-xs sm:text-sm text-[#4b5563]"
+            className="flex flex-wrap items-center gap-6 pt-4 text-xs sm:text-sm text-foreground sm:text-foreground-muted font-medium sm:font-normal"
           >
             <motion.div
               initial={{ opacity: 0, x: -10 }}
@@ -193,7 +193,7 @@ export const HeroSection: React.FC = () => {
               <div className="text-2xl sm:text-3xl font-black text-[#111827] font-mono tracking-tight">
                 <AnimatedCounter value={500} suffix="+" duration={1.5} />
               </div>
-              <p className="text-xs text-[#6b7280] font-medium">
+              <p className="text-xs text-foreground-muted sm:text-foreground-subtle font-medium">
                 Event Sukses Ditangani
               </p>
             </div>
@@ -204,7 +204,7 @@ export const HeroSection: React.FC = () => {
               <div className="text-2xl sm:text-3xl font-black text-[#111827] font-mono tracking-tight">
                 <AnimatedCounter value={99.8} suffix="%" isDecimal={true} duration={1.5} />
               </div>
-              <p className="text-xs text-[#6b7280] font-medium">
+              <p className="text-xs text-foreground-muted sm:text-foreground-subtle font-medium">
                 On-Time Loading & Rundown
               </p>
             </div>
@@ -215,7 +215,7 @@ export const HeroSection: React.FC = () => {
               <div className="text-2xl sm:text-3xl font-black text-[#111827] font-mono tracking-tight">
                 <AnimatedCounter value={35} suffix="+" duration={1.5} />
               </div>
-              <p className="text-xs text-[#6b7280] font-medium">
+              <p className="text-xs text-foreground-muted sm:text-foreground-subtle font-medium">
                 Kota di Seluruh Indonesia
               </p>
             </div>
